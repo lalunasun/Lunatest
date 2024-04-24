@@ -2,7 +2,7 @@
 using System;
 
 // Create a class to pass as an argument for the event handlers (EventArgs class)
-public class MessageEventArgs : EventArgs
+public class MessageEventArgs: EventArgs
 {
     public string Message { get; }
 
@@ -12,13 +12,13 @@ public class MessageEventArgs : EventArgs
     }
 }
 
-// Step 2: Set up the delegate for the event
+// Set up the delegate for the event
 public delegate void MessageReceivedEventHandler(object sender, MessageEventArgs e);
 
-// Step 3: Declare the code for the event
+// Declare the event
 public class MessageNotifier
 {
-    // Step 5: Associate the event with the event handler
+    // Associate the event with the event handler
     public event MessageReceivedEventHandler MessageReceived;
 
     // Simulate receiving a message
@@ -33,7 +33,7 @@ public class MessageNotifier
     }
 }
 
-// Step 4: Create code that will be run when the event occurs (Event Handler)
+// Create code that will be run when the event occurs (Event Handler)
 public class NotificationService
 {
     public void OnMessageReceived(object sender, MessageEventArgs e)
